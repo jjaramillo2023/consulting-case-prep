@@ -1,0 +1,72 @@
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.case-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.case-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.case-card__type {
+  color: var(--company-accent, var(--color-primary));
+}
+
+.case-card__difficulty {
+  color: var(--color-ink-faint);
+  font-weight: 500;
+}
+
+.case-card__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.case-card__summary {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.case-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+}
+
+.case-card__time {
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+}
+
+.case-card__cta {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.case-card__cta:hover {
+  color: var(--color-accent);
+}

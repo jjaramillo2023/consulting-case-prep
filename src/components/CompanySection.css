@@ -1,0 +1,29 @@
+.company-section__header {
+  border-left: 3px solid var(--company-accent, var(--color-primary));
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-section__header h2 {
+  margin-bottom: 0.35rem;
+}
+
+.company-section__header p {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  max-width: 60ch;
+}
+
+.company-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.company-section__empty {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  color: var(--color-ink-faint);
+  font-size: 0.95rem;
+}
