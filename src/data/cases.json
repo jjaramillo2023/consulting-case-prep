@@ -1,0 +1,181 @@
+{
+  "companies": [
+    {
+      "id": "mckinsey",
+      "name": "McKinsey & Company",
+      "shortName": "McKinsey",
+      "accentColor": "#0B4F6C",
+      "description": "Known for the PEI (Personal Experience Interview) and structured, hypothesis-driven cases with heavy quantitative depth.",
+      "cases": [
+        {
+          "id": "mck-profitability-skyward",
+          "companyId": "mckinsey",
+          "title": "Skyward Airlines: Declining Profitability",
+          "type": "profitability",
+          "typeLabel": "Profitability Case",
+          "difficulty": "Medium",
+          "estimatedMinutes": 25,
+          "summary": "A regional airline's operating profit has fallen 40% in two years despite flat revenue. Find the driver and recommend a fix.",
+          "prompt": {
+            "context": "Skyward Airlines is a mid-sized carrier operating 60 routes across the northeastern United States. Over the last two years, revenue has stayed roughly flat at $1.2B per year, but operating profit has dropped from $150M to $90M — a 40% decline. The CEO is alarmed, especially since the airline's main competitors have not reported similar declines. She has hired us to figure out what's driving the drop and what Skyward should do about it.",
+            "initialQuestion": "Why has Skyward Airlines' profitability declined, and what should the CEO do about it?"
+          },
+          "exhibits": [
+            {
+              "id": "pnl-overview",
+              "title": "3-Year P&L Summary",
+              "description": "High-level revenue and cost trend for Skyward Airlines.",
+              "triggerKeywords": ["p&l", "pnl", "income statement", "financials", "revenue and cost", "revenue and costs", "overview of the financials"],
+              "type": "table",
+              "columns": ["Metric", "Year 1", "Year 2", "Year 3 (current)"],
+              "rows": [
+                ["Revenue ($M)", "1,190", "1,205", "1,200"],
+                ["Operating Costs ($M)", "1,040", "1,085", "1,110"],
+                ["Operating Profit ($M)", "150", "120", "90"],
+                ["Operating Margin", "12.6%", "10.0%", "7.5%"]
+              ]
+            },
+            {
+              "id": "cost-breakdown",
+              "title": "Cost Breakdown by Category (Current Year)",
+              "description": "Where Skyward's $1.11B in operating costs goes, vs. the prior year.",
+              "triggerKeywords": ["cost breakdown", "cost structure", "costs", "expenses", "where are costs coming from", "cost drivers"],
+              "type": "table",
+              "columns": ["Cost Category", "Year 2 ($M)", "Year 3 ($M)", "Change"],
+              "rows": [
+                ["Fuel", "290", "365", "+25.9%"],
+                ["Labor", "340", "355", "+4.4%"],
+                ["Maintenance", "150", "155", "+3.3%"],
+                ["Airport & landing fees", "120", "130", "+8.3%"],
+                ["Other (marketing, admin, IT)", "185", "105", "-43.2%"]
+              ],
+              "note": "Fuel price per gallon rose ~22% year over year industry-wide due to global oil price increases. Skyward does not currently hedge fuel costs."
+            },
+            {
+              "id": "route-profitability",
+              "title": "Route Profitability Snapshot",
+              "description": "Load factor and margin for Skyward's five largest routes by capacity.",
+              "triggerKeywords": ["routes", "route performance", "route profitability", "which routes", "load factor"],
+              "type": "table",
+              "columns": ["Route", "Avg. Load Factor", "Operating Margin"],
+              "rows": [
+                ["Boston – New York", "88%", "18%"],
+                ["Boston – Washington DC", "82%", "14%"],
+                ["New York – Chicago", "76%", "6%"],
+                ["Boston – Chicago", "68%", "-4%"],
+                ["New York – Miami", "74%", "2%"]
+              ],
+              "note": "Boston–Chicago and New York–Miami were both launched 18 months ago as part of a growth push into new markets."
+            },
+            {
+              "id": "competitor-benchmark",
+              "title": "Competitor Benchmark",
+              "description": "How Skyward compares to two direct competitors on the same routes.",
+              "triggerKeywords": ["competitors", "competition", "benchmark", "competitive landscape", "how do competitors compare"],
+              "type": "table",
+              "columns": ["Metric", "Skyward", "Competitor A", "Competitor B"],
+              "rows": [
+                ["Operating Margin", "7.5%", "13%", "11%"],
+                ["Fuel Hedging in Place", "No", "Yes (60% of volume)", "Yes (40% of volume)"],
+                ["Avg. Fleet Age (years)", "14", "7", "9"]
+              ],
+              "note": "Older aircraft burn roughly 15-20% more fuel per seat-mile than new-generation aircraft."
+            }
+          ]
+        },
+        {
+          "id": "mck-market-entry-meridian",
+          "companyId": "mckinsey",
+          "title": "Meridian Coffee Co.: Entering Mexico",
+          "type": "market-entry",
+          "typeLabel": "Market Entry Case",
+          "difficulty": "Medium-Hard",
+          "estimatedMinutes": 30,
+          "summary": "A premium US coffee chain with 400 stores is considering Mexico as its first international market.",
+          "prompt": {
+            "context": "Meridian Coffee Co. operates 400 premium coffee shops across the United States, generating $850M in annual revenue. Domestic growth has slowed to 2% per year as the US market matures. The CEO is considering international expansion and has identified Mexico as a candidate for Meridian's first market outside the US, given geographic proximity and growing urban middle-class demand for premium coffee. She has asked us to evaluate the opportunity before committing capital.",
+            "initialQuestion": "Should Meridian Coffee Co. enter the Mexican market? If so, how should they approach it?"
+          },
+          "exhibits": [
+            {
+              "id": "market-size",
+              "title": "Mexico Premium Coffee Shop Market",
+              "description": "Size and growth of the addressable market.",
+              "triggerKeywords": ["market size", "market growth", "how big is the market", "total addressable market", "tam"],
+              "type": "table",
+              "columns": ["Metric", "Value"],
+              "rows": [
+                ["Total coffee shop market (Mexico)", "$2.1B/year"],
+                ["Premium/specialty segment", "$480M/year (23% of total)"],
+                ["Premium segment growth rate", "9% per year"],
+                ["Number of premium coffee shops nationally", "~1,900"],
+                ["Concentration in Mexico City, Guadalajara, Monterrey", "65% of premium shops"]
+              ]
+            },
+            {
+              "id": "competitive-landscape",
+              "title": "Competitive Landscape",
+              "description": "Key players already active in the premium segment.",
+              "triggerKeywords": ["competitors", "competitive landscape", "who else is in the market", "existing players"],
+              "type": "table",
+              "columns": ["Player", "Stores in Mexico", "Positioning"],
+              "rows": [
+                ["Starbucks Mexico", "~750", "Premium, dominant brand, present since 2002"],
+                ["Cielito Querido Café", "~230", "Local premium chain, strong brand loyalty"],
+                ["Independent specialty cafés", "~900 (fragmented)", "Local/artisanal, no national chain"]
+              ],
+              "note": "Starbucks Mexico is operated via a joint venture (Alsea) rather than direct ownership."
+            },
+            {
+              "id": "consumer-segments",
+              "title": "Consumer Segments",
+              "description": "Demographic breakdown of premium coffee consumers in target cities.",
+              "triggerKeywords": ["customer segments", "consumer segments", "demographics", "who is the customer", "target customer"],
+              "type": "table",
+              "columns": ["Segment", "Share of Premium Spend", "Key Trait"],
+              "rows": [
+                ["Urban professionals 25-40", "48%", "High willingness to pay, values convenience & wifi/work space"],
+                ["Students 18-24", "22%", "Price-sensitive, values social atmosphere"],
+                ["Tourists & expats", "18%", "Familiarity with US brands drives choice"],
+                ["Other", "12%", "—"]
+              ]
+            },
+            {
+              "id": "entry-costs",
+              "title": "Estimated Entry & Operating Costs",
+              "description": "Cost to open and run a store in a target Mexican city, vs. the US baseline.",
+              "triggerKeywords": ["entry costs", "cost of entry", "capex", "how much would it cost", "investment required"],
+              "type": "table",
+              "columns": ["Item", "Mexico (per store)", "US Baseline (per store)"],
+              "rows": [
+                ["Build-out / capex", "$180K", "$310K"],
+                ["Annual rent (prime urban location)", "$95K", "$140K"],
+                ["Local labor cost (annual, per store)", "$65K", "$210K"],
+                ["Import duties on specialty equipment", "12-18% of equipment cost", "n/a"]
+              ],
+              "note": "Meridian sources its espresso equipment from Italy; equipment imported into Mexico is subject to duties that don't apply domestically in the US."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bcg",
+      "name": "Boston Consulting Group",
+      "shortName": "BCG",
+      "accentColor": "#0F7B6C",
+      "description": "Known for conversational, interviewer-led cases that reward structured thinking under ambiguity.",
+      "comingSoon": true,
+      "cases": []
+    },
+    {
+      "id": "bain",
+      "name": "Bain & Company",
+      "shortName": "Bain",
+      "accentColor": "#8C1D18",
+      "description": "Known for candidate-led cases with a strong emphasis on business judgment and quick mental math.",
+      "comingSoon": true,
+      "cases": []
+    }
+  ]
+}
